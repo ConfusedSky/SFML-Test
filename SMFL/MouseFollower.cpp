@@ -2,16 +2,9 @@
 #include "MouseFollower.h"
 #include <math.h>
 #include <iostream>
+#include "VectorUtility.h"
 
-float lerp(float p1, float p2, float distance)
-{
-	return (1 - distance) * p1 + distance * p2;
-}
 
-sf::Vector2f lerp(sf::Vector2f p1, sf::Vector2f p2, float distance)
-{
-	return sf::Vector2f(lerp(p1.x, p2.x, distance), lerp(p1.y, p2.y, distance));
-}
 
 MouseFollower::MouseFollower( float size, float speed ) : follower(size), maxSpeed(speed), size(size)
 {
@@ -26,23 +19,22 @@ void MouseFollower::ChangeTarget(sf::Vector2f &target)
 
 void MouseFollower::Update(double time)
 {
-	sf::Vector2f distance = target - follower.getPosition();
+	sf::Vector2f distance = target - position;
 	double magnitude = sqrt (distance.x*distance.x + distance.y*distance.y);
 
 	if (magnitude < maxSpeed*time)
 	{
-		follower.setPosition(target);
+		position = target;
 		return;
 	}
 
 	double scale = maxSpeed / magnitude;
-	distance.x *= scale * time;
-	distance.y *= scale * time;
-	follower.setPosition (follower.getPosition() + distance);
+	position = position + VectorUtility::Scale(distance, scale*time);
 }
 
 void MouseFollower::Render(sf::RenderTarget &target)
 {
+	follower.setPosition(position);
 	target.draw(follower);
 }
 

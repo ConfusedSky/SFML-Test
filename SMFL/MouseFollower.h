@@ -2,7 +2,9 @@
 
 #include "stdafx.h"
 #include <SFML/Graphics.hpp>
-class MouseFollower
+#include "GameObject.h"
+
+class MouseFollower : GameObject
 {
 public:
 	MouseFollower( float size, float speed );
