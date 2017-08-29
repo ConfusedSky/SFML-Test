@@ -6,30 +6,45 @@
 
 
 
-MouseFollower::MouseFollower( float size, float speed ) : follower(size), maxSpeed(speed), size(size)
+MouseFollower::MouseFollower( float size, float speed ) : follower(size), speed(speed), size(size), target(leadTarget)
 {
 	follower.setFillColor(sf::Color::Green);
 }
 
 void MouseFollower::ChangeTarget(sf::Vector2f &target)
 {
-	this->target.x = target.x - size;
-	this->target.y = target.y - size;
+	sf::Vector2f distance = target - position;
+	double magnitude = sqrt(distance.x*distance.x + distance.y*distance.y);
+
+	this->actualTarget.x = target.x - size;
+	this->actualTarget.y = target.y - size;
+
+	this->leadTarget = this->actualTarget + distance;
+
+	this->target = leadTarget;
 }
 
 void MouseFollower::Update(double time)
 {
 	sf::Vector2f distance = target - position;
 	double magnitude = sqrt (distance.x*distance.x + distance.y*distance.y);
-
-	if (magnitude < maxSpeed*time)
+/*
+	if (magnitude < speed*time)
 	{
 		position = target;
 		return;
 	}
 
-	double scale = maxSpeed / magnitude;
-	position = position + VectorUtility::Scale(distance, scale*time);
+	velocity = VectorUtility::Scale(distance, speed/magnitude);
+	position = position + VectorUtility::Scale(velocity, time);
+*/
+
+	if ( magnitude < 40 )
+	{
+		target = actualTarget;
+	}
+
+	position = VectorUtility::Lerp(position, target, speed*time);
 }
 
 void MouseFollower::Render(sf::RenderTarget &target)

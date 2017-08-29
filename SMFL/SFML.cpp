@@ -8,7 +8,7 @@
 #define RADIUS 10.f
 #define FPS 60
 #define MS_PER_FRAME 1000/FPS
-#define SPEED 800
+#define SPEED 5
 
 int main()
 {

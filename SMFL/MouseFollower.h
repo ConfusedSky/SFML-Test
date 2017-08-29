@@ -16,9 +16,11 @@ public:
 	~MouseFollower();
 
 private:
-	sf::Vector2f target;
+	sf::Vector2f& target;
+	sf::Vector2f leadTarget;
+	sf::Vector2f actualTarget;
 	sf::CircleShape follower;
-	float maxSpeed;
+	float speed;
 	float size;
 };
 
