@@ -6,7 +6,8 @@
 
 
 
-MouseFollower::MouseFollower( float size, float speed ) : follower(size), speed(speed), size(size), target(leadTarget)
+MouseFollower::MouseFollower( float size, float speed ) : 
+	follower(size), speed(speed), size(size), target(leadTarget)
 {
 	follower.setFillColor(sf::Color::Green);
 }
