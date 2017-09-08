@@ -29,6 +29,7 @@ void MouseFollower::Update(double time)
 {
 	sf::Vector2f distance = target - position;
 	double magnitude = sqrt (distance.x*distance.x + distance.y*distance.y);
+	double scaledSpeed = speed;
 /*
 	if (magnitude < speed*time)
 	{
@@ -43,6 +44,7 @@ void MouseFollower::Update(double time)
 	if ( magnitude < 40 )
 	{
 		target = actualTarget;
+		scaledSpeed = speed / 2;
 	}
 
 	position = VectorUtility::Lerp(position, target, speed*time);
