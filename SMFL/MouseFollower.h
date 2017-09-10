@@ -10,7 +10,7 @@ public:
 	MouseFollower( float size, IMoveTo* locomotion );
 
 	void ChangeTarget(sf::Vector2f &target);
-	void Update(double time);
+	void Update(float time);
 	void Render(sf::RenderTarget &target);
 
 	~MouseFollower();

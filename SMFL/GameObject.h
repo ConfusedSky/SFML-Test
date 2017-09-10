@@ -9,7 +9,7 @@ public:
 	GameObject();
 	~GameObject();
 
-	virtual void Update(double time) = 0;
+	virtual void Update(float time) = 0;
 	virtual void Render(sf::RenderTarget &target) = 0;
 
 	Vector2f GetPosition()

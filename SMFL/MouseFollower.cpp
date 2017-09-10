@@ -17,7 +17,7 @@ void MouseFollower::ChangeTarget(sf::Vector2f &target)
 	this->target.y = target.y - size;
 }
 
-void MouseFollower::Update(double time)
+void MouseFollower::Update(float time)
 {
 	locomotion->MoveTo(*this, target, time);
 }

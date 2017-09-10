@@ -7,9 +7,6 @@
 #include "LerpMoveTo.h"
 #include "SpringMoveTo.h"
 
-#define FPS 60
-#define MS_PER_FRAME 1000/FPS
-
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1600,900), "SFML works!");

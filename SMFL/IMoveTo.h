@@ -6,5 +6,5 @@ class IMoveTo
 {
 public:
 	virtual ~IMoveTo(){};
-	virtual void MoveTo(GameObject& object, sf::Vector2f destination, double time) = 0;
+	virtual void MoveTo(GameObject& object, sf::Vector2f destination, float time) = 0;
 };
