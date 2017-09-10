@@ -15,11 +15,17 @@ int main()
 	MouseFollower follower(10.f, &locomotion);
 	
 	sf::Clock timer;
+	int previous = timer.getElapsedTime().asMilliseconds();
+	int lag = 0;
 
 	while (window.isOpen())
 	{
+		int current = timer.getElapsedTime().asMilliseconds();
+		int elapsed = current - previous;
+		previous = current;
+		lag += elapsed;
+
 		sf::Event event;
-		sf::Time start = timer.getElapsedTime();
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
@@ -34,15 +40,17 @@ int main()
 			}
 		}
 
+		while (lag >= MS_PER_FRAME)
+		{
+			follower.Update(1.f / FPS);
+			lag -= MS_PER_FRAME;
+		}
+
 		window.clear();
 
-		follower.Update(1./FPS);
-
-		follower.Render(window);
+		follower.Render(window, lag / 1000.f);
 
 		window.display();
-
-		sf::sleep( start + sf::milliseconds(MS_PER_FRAME) - timer.getElapsedTime() );
 	}
 
 	return 0;

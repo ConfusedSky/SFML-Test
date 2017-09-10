@@ -11,7 +11,7 @@ public:
 
 	void ChangeTarget(sf::Vector2f &target);
 	void Update(float time);
-	void Render(sf::RenderTarget &target);
+	void Render(sf::RenderTarget &target, float lag);
 
 	~MouseFollower();
 

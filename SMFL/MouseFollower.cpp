@@ -22,9 +22,9 @@ void MouseFollower::Update(float time)
 	locomotion->MoveTo(*this, target, time);
 }
 
-void MouseFollower::Render(sf::RenderTarget &target)
+void MouseFollower::Render(sf::RenderTarget &target, float lag)
 {
-	sprite.setPosition(GetPosition());
+	sprite.setPosition(GetPosition() + GetVelocity() * lag);
 	target.draw(sprite);
 }
 

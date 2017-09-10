@@ -10,7 +10,7 @@ public:
 	~GameObject();
 
 	virtual void Update(float time) = 0;
-	virtual void Render(sf::RenderTarget &target) = 0;
+	virtual void Render(sf::RenderTarget &target, float lag) = 0;
 
 	Vector2f GetPosition()
 	{
