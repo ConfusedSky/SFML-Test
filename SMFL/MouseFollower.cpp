@@ -5,8 +5,8 @@
 #include "VectorUtility.h"
 
 
-MouseFollower::MouseFollower( float size, float speed ) : 
-	sprite(size), size(size), locomotion(speed)
+MouseFollower::MouseFollower(float size, IMoveTo* locomotion) : 
+	sprite(size), size(size), locomotion(locomotion)
 {
 	sprite.setFillColor(sf::Color::Green);
 }
@@ -19,7 +19,7 @@ void MouseFollower::ChangeTarget(sf::Vector2f &target)
 
 void MouseFollower::Update(double time)
 {
-	locomotion.MoveTo(*this, target, time);
+	locomotion->MoveTo(*this, target, time);
 }
 
 void MouseFollower::Render(sf::RenderTarget &target)

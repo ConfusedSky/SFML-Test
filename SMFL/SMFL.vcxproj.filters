@@ -36,9 +36,6 @@
     <ClInclude Include="MouseFollower.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Collider.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -49,6 +46,12 @@
       <Filter>Header Files\MoveTo</Filter>
     </ClInclude>
     <ClInclude Include="LerpMoveTo.h">
+      <Filter>Header Files\MoveTo</Filter>
+    </ClInclude>
+    <ClInclude Include="ICollider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpringMoveTo.h">
       <Filter>Header Files\MoveTo</Filter>
     </ClInclude>
   </ItemGroup>
@@ -69,6 +72,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LerpMoveTo.cpp">
+      <Filter>Source Files\MoveTo</Filter>
+    </ClCompile>
+    <ClCompile Include="SpringMoveTo.cpp">
       <Filter>Source Files\MoveTo</Filter>
     </ClCompile>
   </ItemGroup>

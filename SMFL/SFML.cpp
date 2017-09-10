@@ -4,16 +4,18 @@
 #include "stdafx.h"
 #include <SFML/Graphics.hpp>
 #include "MouseFollower.h"
+#include "LerpMoveTo.h"
+#include "SpringMoveTo.h"
 
-#define RADIUS 10.f
 #define FPS 60
 #define MS_PER_FRAME 1000/FPS
-#define SPEED 5
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1600,900), "SFML works!");
-	MouseFollower follower(RADIUS, SPEED);
+	//LerpMoveTo locomotion(5);
+	SpringMoveTo locomotion(95, 12);
+	MouseFollower follower(10.f, &locomotion);
 	
 	sf::Clock timer;
 

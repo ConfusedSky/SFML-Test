@@ -1,15 +1,13 @@
 #pragma once
 
-#include "stdafx.h"
 #include <SFML/Graphics.hpp>
 #include "GameObject.h"
 #include "IMoveTo.h"
-#include "LerpMoveTo.h"
 
 class MouseFollower : GameObject
 {
 public:
-	MouseFollower( float size, float speed );
+	MouseFollower( float size, IMoveTo* locomotion );
 
 	void ChangeTarget(sf::Vector2f &target);
 	void Update(double time);
@@ -20,7 +18,7 @@ public:
 private:
 	sf::Vector2f target;
 	sf::CircleShape sprite;
-	LerpMoveTo locomotion;
+	IMoveTo* locomotion;
 	float size;
 };
 

@@ -153,12 +153,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Collider.h" />
+    <ClInclude Include="ICollider.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="IMoveTo.h" />
     <ClInclude Include="LerpMoveTo.h" />
     <ClInclude Include="MouseFollower.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SpringMoveTo.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="VectorUtility.h" />
@@ -168,6 +169,7 @@
     <ClCompile Include="LerpMoveTo.cpp" />
     <ClCompile Include="MouseFollower.cpp" />
     <ClCompile Include="SFML.cpp" />
+    <ClCompile Include="SpringMoveTo.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
