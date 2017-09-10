@@ -3,6 +3,8 @@
 #include "stdafx.h"
 #include <SFML/Graphics.hpp>
 #include "GameObject.h"
+#include "IMoveTo.h"
+#include "LerpMoveTo.h"
 
 class MouseFollower : GameObject
 {
@@ -16,11 +18,9 @@ public:
 	~MouseFollower();
 
 private:
-	sf::Vector2f& target;
-	sf::Vector2f leadTarget;
-	sf::Vector2f actualTarget;
-	sf::CircleShape follower;
-	float speed;
+	sf::Vector2f target;
+	sf::CircleShape sprite;
+	LerpMoveTo locomotion;
 	float size;
 };
 

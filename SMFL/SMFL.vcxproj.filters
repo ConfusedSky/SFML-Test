@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\MoveTo">
+      <UniqueIdentifier>{fbe752df-6bf5-4723-b492-c4be93daf4cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MoveTo">
+      <UniqueIdentifier>{d1ccb1ec-b0b7-4173-8375-c22fac43ae9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -39,6 +45,12 @@
     <ClInclude Include="VectorUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IMoveTo.h">
+      <Filter>Header Files\MoveTo</Filter>
+    </ClInclude>
+    <ClInclude Include="LerpMoveTo.h">
+      <Filter>Header Files\MoveTo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -56,10 +68,16 @@
     <ClCompile Include="VectorUtility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LerpMoveTo.cpp">
+      <Filter>Source Files\MoveTo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SFML.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

@@ -12,7 +12,27 @@ public:
 	virtual void Update(double time) = 0;
 	virtual void Render(sf::RenderTarget &target) = 0;
 
-protected:
+	Vector2f GetPosition()
+	{
+		return position;
+	};
+
+	void SetPosition(Vector2f position)
+	{
+		this->position = position;
+	};
+
+	Vector2f GetVelocity()
+	{
+		return velocity;
+	};
+
+	void SetVelocity(Vector2f velocity)
+	{
+		this->velocity = velocity;
+	};
+
+private:
 	Vector2f position, velocity;
 };
 
