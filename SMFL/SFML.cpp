@@ -14,7 +14,7 @@ int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1600,900), "SFML works!");
 	//LerpMoveTo locomotion(5);
-	SpringMoveTo locomotion(95, 12);
+	SpringMoveTo locomotion(110, 10);
 	MouseFollower follower(10.f, &locomotion);
 	
 	sf::Clock timer;
